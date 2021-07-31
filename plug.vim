@@ -42,8 +42,6 @@ let g:user_emmet_leader_key = '<C-Z>'
 Plug 'tpope/vim-fugitive'
 nnoremap gs :Git<CR>
 
-Plug 'vim-airline/vim-airline'
-
 Plug 'tpope/vim-commentary'
 nnoremap <C-C> :Commentary<CR>
 vnoremap <C-C> :Commentary<CR>
