@@ -35,8 +35,9 @@ Plug 'dracula/vim',{'as':'dracula'}
 Plug 'junegunn/seoul256.vim'
 let g:seoul256_background = 235
 
-" Plug 'mattn/emmet-vim'
-" let g:user_emmet_leader_key = ',,'
+Plug 'mattn/emmet-vim'
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key = '<C-Z>'
 
 Plug 'tpope/vim-fugitive'
 nnoremap gs :Git<CR>
@@ -79,5 +80,7 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'nvim-lua/completion-nvim'
 
 Plug 'hoob3rt/lualine.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
