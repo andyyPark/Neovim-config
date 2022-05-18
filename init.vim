@@ -1,5 +1,5 @@
 " Author: Andy Park
-" Last Update: Jul 30 2021
+" Last Update: May 10 2022
 
 " --- Init autocmd
 autocmd!
@@ -39,11 +39,11 @@ set colorcolumn=" "
 highlight Visual cterm=NONE ctermbg=238 ctermfg=NONE guibg=Grey40
 highlight LineNr cterm=NONE ctermfg=240 guifg=#2b506e guibg=#000000
 
-augroup BgHighlight
-    autocmd!
-    autocmd WinEnter * set cul
-    autocmd WinLeave * set nocul
-augroup End
+" augroup BgHighlight
+"     autocmd!
+"     autocmd WinEnter * set cul
+"     autocmd WinLeave * set nocul
+" augroup End
 
 " --- Searching Configuration
 set incsearch
@@ -59,6 +59,7 @@ set backspace=indent,eol,start
 set noerrorbells
 set spelllang=en_us
 set spell
+set mouse=a
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
@@ -73,6 +74,9 @@ autocmd InsertLeave * set nopaste
 
 if exists("&termguicolors") && exists("&winblend")
     syntax enable
+    " This is only necessary if you use "set termguicolors".
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
     set winblend=0
     set wildoptions=pum
@@ -80,7 +84,7 @@ if exists("&termguicolors") && exists("&winblend")
     set background=dark
     let g:neosolarized_termtrans=1
     runtime ./colors/NeoSolarized.vim
-    colorscheme NeoSolarized
+    colorscheme nord
 endif
 
 
